@@ -46,9 +46,9 @@ class inverse_model(nn.Module):
         self.gru_out = nn.GRU(8, 8, num_layers=1,
                               batch_first=True, bidirectional=True)
         self.out = nn.Sequential(
-            nn.Linear(16, 16),
+            nn.Linear(16, 54),
             nn.ReLU(),
-            nn.Linear(16, 1),
+            nn.Linear(54, 1),
         )
         self.dropout = nn.Dropout(dropout)
         self.act = act
